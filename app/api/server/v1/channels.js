@@ -5,9 +5,10 @@ import { Rooms, Subscriptions, Messages, Uploads, Integrations, Users } from '..
 import { hasPermission, hasAtLeastOnePermission } from '../../../authorization/server';
 import { mountIntegrationQueryBasedOnPermissions } from '../../../integrations/server/lib/mountQueriesBasedOnPermission';
 import { normalizeMessagesForUser } from '../../../utils/server/lib/normalizeMessagesForUser';
+
 import { API } from '../api';
 import { settings } from '../../../settings';
-import {check, Match} from "meteor/check";
+import { check, Match } from 'meteor/check';
 
 
 // Returns the channel IF found otherwise it will return the failure of why it didn't. Check the `statusCode` property
@@ -189,7 +190,7 @@ function createChannelValidator(params) {
 
 function createChannel(userId, params) {
 	const readOnly = typeof params.readOnly !== 'undefined' ? params.readOnly : false;
-	const id = Meteor.runAsUser(userId, () => Meteor.call('createChannel', params.name, params.members ? params.members : [], readOnly, params.customFields,{},params.avatar));
+	const id = Meteor.runAsUser(userId, () => Meteor.call('createChannel', params.name, params.members ? params.members : [], readOnly, params.customFields, {}, params.avatar));
 
 	return {
 		channel: findChannelByIdOrName({ params: { roomId: id.rid }, userId: this.userId }),
@@ -1080,7 +1081,7 @@ API.v1.addRoute('channels.setRoomAvatar', { authRequired: true }, {
 
 		 */
 
-		const findResult = findChannelByIdOrName({ params: this.bodyParams});
+		const findResult = findChannelByIdOrName({ params: this.bodyParams });
 
 
 		Meteor.runAsUser(this.userId, () => {

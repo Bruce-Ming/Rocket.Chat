@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 
-import { updateAvatarOfUsername , updateAvatarOfRoom} from '../../app/ui-utils';
+import { updateAvatarOfUsername, updateAvatarOfRoom } from '../../app/ui-utils';
 import { Notifications } from '../../app/notifications';
 
 Meteor.startup(function() {

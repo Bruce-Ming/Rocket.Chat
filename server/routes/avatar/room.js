@@ -6,7 +6,7 @@ import {
 	wasFallbackModified,
 	setCacheAndDispositionHeaders,
 } from './utils';
-import { Rooms ,Avatars } from '../../../app/models/server';
+import { Rooms, Avatars } from '../../../app/models/server';
 import { roomTypes } from '../../../app/utils';
 import { FileUpload } from '../../../app/file-upload';
 

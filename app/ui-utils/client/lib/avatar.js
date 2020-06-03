@@ -5,6 +5,7 @@ import { RoomManager } from './RoomManager';
 import { getUserAvatarURL } from '../../../utils/lib/getUserAvatarURL';
 import { getRoomAvatarURL } from '../../../utils/lib/getRoomAvatarURL';
 import { Subscriptions } from '../../../models';
+
 Blaze.registerHelper('avatarUrlFromUsername', getUserAvatarURL);
 
 export const getAvatarAsPng = function(username, cb) {
