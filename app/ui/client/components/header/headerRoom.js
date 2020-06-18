@@ -60,14 +60,8 @@ Template.headerRoom.helpers({
 	roomName() {
 		const roomData = Session.get(`roomData${ this._id }`);
 		if (!roomData) { return ''; }
-		let nameArray = roomTypes.getRoomName(roomData.t, roomData).split('_');
-		if(nameArray.length===1){
-			return roomTypes.getRoomName(roomData.t, roomData);
-		}else {
-			nameArray.pop();
-			return nameArray.join('_');
-		}
-		// return roomTypes.getRoomName(roomData.t, roomData).split('_')[0];
+
+		return roomTypes.getRoomName(roomData.t, roomData).split('_')[0];
 	},
 
 	secondaryName() {

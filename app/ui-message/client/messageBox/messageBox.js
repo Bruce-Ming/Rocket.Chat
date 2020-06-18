@@ -110,7 +110,7 @@ Template.messageBox.onRendered(function() {
 	this.source = $input[0];
 	$input.on('dataChange', () => {
 		const messages = $input.data('reply') || [];
-			this.replyMessageData.set(messages);
+		this.replyMessageData.set(messages);
 	});
 	this.autorun(() => {
 		const { rid, subscription } = Template.currentData();

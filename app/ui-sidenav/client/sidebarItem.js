@@ -17,14 +17,7 @@ Template.sidebarItem.helpers({
 		return this.avatar + '?' + new Date().getTime();
 	},
 	displayName(){
-		let nameArray=this.name.split('_');
-		if(nameArray.length===1){
-			return this.name
-		}else {
-			nameArray.pop();
-			return nameArray.join('_');
-		}
-
+		return this.name.split('_')[0];
 	},
 	streaming() {
 		return this.streamingOptions && Object.keys(this.streamingOptions).length;
