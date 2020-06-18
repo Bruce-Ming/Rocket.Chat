@@ -5,6 +5,7 @@ import { Template } from 'meteor/templating';
 import { TAPi18n } from 'meteor/rocketchat:tap-i18n';
 import toastr from 'toastr';
 import s from 'underscore.string';
+
 import { AdminChatRoom } from './adminRooms';
 import { t, handleError, roomTypes } from '../../../utils';
 import { call, modal } from '../../../ui-utils';

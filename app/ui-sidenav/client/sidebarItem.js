@@ -12,12 +12,8 @@ import { timeAgo } from '../../lib/client/lib/formatDate';
 import { getUidDirectMessage } from '../../ui-utils/client/lib/getUidDirectMessage';
 
 Template.sidebarItem.helpers({
-
-	displayAvatar(){
-		return this.avatar + '?' + new Date().getTime();
-	},
-	displayName(){
-		return this.name.split('_')[0];
+	displayAvatar() {
+		return `${ this.avatar }?${ new Date().getTime() }`;
 	},
 	streaming() {
 		return this.streamingOptions && Object.keys(this.streamingOptions).length;
@@ -35,8 +31,6 @@ Template.sidebarItem.helpers({
 		return this.lastMessage && Template.instance().lastMessageTs.get();
 	},
 	mySelf() {
-		// console.log(Template.instance());
-		// console.log(this)
 		return this.t === 'd' && this.name === Template.instance().user.username;
 	},
 	isLivechatQueue() {

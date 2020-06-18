@@ -1,15 +1,13 @@
 import { Meteor } from 'meteor/meteor';
 import _ from 'underscore';
+import { check, Match } from 'meteor/check';
 
 import { Rooms, Subscriptions, Messages, Uploads, Integrations, Users } from '../../../models';
 import { hasPermission, hasAtLeastOnePermission } from '../../../authorization/server';
 import { mountIntegrationQueryBasedOnPermissions } from '../../../integrations/server/lib/mountQueriesBasedOnPermission';
 import { normalizeMessagesForUser } from '../../../utils/server/lib/normalizeMessagesForUser';
-
 import { API } from '../api';
 import { settings } from '../../../settings';
-import { check, Match } from 'meteor/check';
-
 
 // Returns the channel IF found otherwise it will return the failure of why it didn't. Check the `statusCode` property
 function findChannelByIdOrName({ params, checkedArchived = true, userId }) {

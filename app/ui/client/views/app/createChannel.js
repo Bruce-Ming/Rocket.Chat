@@ -250,7 +250,7 @@ Template.createChannel.events({
 		const extraData = Object.keys(instance.extensions_submits)
 			.reduce((result, key) => ({ ...result, ...instance.extensions_submits[key](instance) }), { broadcast, encrypted });
 
-		Meteor.call(isPrivate ? 'createPrivateGroup' : 'createChannel', name, instance.selectedUsers.get().map((user) => user.username), readOnly, {}, extraData,avatar, function(err, result) {
+		Meteor.call(isPrivate ? 'createPrivateGroup' : 'createChannel', name, instance.selectedUsers.get().map((user) => user.username), readOnly, {}, extraData, avatar, function(err, result) {
 			if (err) {
 				if (err.error === 'error-invalid-name') {
 					instance.invalid.set(true);
@@ -304,7 +304,7 @@ Template.createChannel.events({
 			};
 		});
 	},
-	'click .js-select-avatar-url'(e, instance, ...args) {
+	'click .js-select-avatar-url'(e, instance) {
 		const url = instance.avatarUrl.get().trim();
 		if (!url) {
 			return;
