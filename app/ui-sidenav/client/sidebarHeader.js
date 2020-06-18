@@ -59,7 +59,7 @@ const toolbarButtons = (/* user */) => [{
 		FlowRouter.go('directory');
 	},
 },
-{
+/*{
 	name: t('Sort'),
 	icon: 'sort',
 	hasPopup: true,
@@ -75,7 +75,7 @@ const toolbarButtons = (/* user */) => [{
 		};
 		popover.open(config);
 	},
-},
+},*/
 {
 	name: t('Create_new'),
 	icon: 'edit-rounded',

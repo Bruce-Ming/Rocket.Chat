@@ -33,7 +33,8 @@ const common = {
 	},
 	canEditRoom() {
 		const { _id } = Template.instance().room;
-		return hasAllPermission('edit-room', _id);
+		// return hasAllPermission('edit-room', _id);
+		return false;
 	},
 	isDirectMessage() {
 		const { room: { t } } = Template.instance();
@@ -852,7 +853,8 @@ Template.channelSettingsEditing.helpers({
 
 Template.channelSettings.helpers({
 	editing() {
-		return Template.instance().editing.get();
+		//return Template.instance().editing.get();
+		return false;
 	},
 });
 

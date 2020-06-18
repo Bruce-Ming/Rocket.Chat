@@ -205,6 +205,7 @@ export const menu = new class extends EventEmitter {
 	}
 
 	toggle() {
+		console.log(this._open);
 		return this.isOpen() ? this.close() : this.open();
 	}
 }();

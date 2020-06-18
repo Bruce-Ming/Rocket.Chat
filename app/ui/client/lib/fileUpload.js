@@ -209,7 +209,6 @@ const getUploadPreview = async (file, preview) => {
 
 export const fileUpload = async (files, input, { rid, tmid }) => {
 	const threadsEnabled = settings.get('Threads_enabled');
-
 	files = [].concat(files);
 
 	const replies = $(input).data('reply') || [];
@@ -251,7 +250,7 @@ export const fileUpload = async (files, input, { rid, tmid }) => {
 			return;
 		}
 
-		showUploadPreview(file, async (file, preview) => modal.open({
+		/*showUploadPreview(file, async (file, preview) => modal.open({
 			title: t('Upload_file_question'),
 			text: await getUploadPreview(file, preview),
 			showCancelButton: true,
@@ -264,19 +263,19 @@ export const fileUpload = async (files, input, { rid, tmid }) => {
 		}, async (isConfirm) => {
 			if (!isConfirm) {
 				return;
-			}
+			}*/
 
-			const fileName = document.getElementById('file-name').value || file.name || file.file.name;
+			const fileName =  file.name || file.file.name;
 
 			uploadFileWithMessage(rid, tmid, {
-				description: document.getElementById('file-description').value || undefined,
+				description: fileName || undefined,
 				fileName,
 				msg: msg || undefined,
 				file,
 			});
 
 			uploadNextFile();
-		}));
+		//}));
 	};
 
 	uploadNextFile();
